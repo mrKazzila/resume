@@ -68,3 +68,10 @@ ul.education-list {
   margin-bottom: 5px;
   margin-left: 10px;
 }
+
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    width: 85%;
+}
