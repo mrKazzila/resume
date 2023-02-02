@@ -1,0 +1,50 @@
+\documentclass[letter,10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{CJKutf8}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[russian]{babel}
+
+\usepackage{TLCresume}
+
+
+%====================
+% CONTACT INFORMATION
+%====================
+
+\author{Илья Казаков} 
+\def\city{Петрозаводск}
+\def\email{mrkazzila@gmail.com}
+
+\def\github{Kazzila} % github username
+\def\telegram{kazzila} % telegram username
+\def\LinkedIn{i-kazakov} % linkedin.com/in/______
+
+\begin{document}
+\import{sections/}{_header}
+\vspace*{1pt}
+
+\hline
+
+\section{О себе}
+\vspace*{3pt}
+\import{sections/}{about}
+\vspace*{10pt}
+
+%\vspace*{10pt}
+\section{Навыки}
+\vspace*{3pt}
+\import{sections/}{skills}
+\vspace*{10pt}
+
+\section{Опыт работы}
+\vspace*{3pt}
+\import{sections/}{experience}
+\vspace*{10pt}
+
+\section{Образование}
+\import{sections/}{education}
+\vspace*{10pt}
+
+\end{document}
