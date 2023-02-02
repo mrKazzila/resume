@@ -1,7 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{TLCresume}[2021/12/11 resume package]
 
-% Assuming using "article" document class.
 % FONT STUFF
 \RequirePackage[T1]{fontenc} %  Font encoding https://texfaq.org/FAQ-why-inp-font
 %\RequirePackage[default,semibold]{sourcesanspro} this is the uggo non CM font
@@ -16,11 +15,18 @@
 
 % COLOR
 \RequirePackage{xcolor}
-\definecolor{highlight}{RGB}{61, 90, 128} % CHANGE THIS TO YOUR FAV COLOR https://g.co/kgs/aoqdi7
+\definecolor{highlight}{RGB}{105, 74, 138} % CHANGE THIS TO YOUR FAV COLOR https://g.co/kgs/aoqdi7
 
 % LINKS
 \RequirePackage{hyperref}
-\hypersetup{colorlinks=true,urlcolor=highlight}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=highlight,
+    linkcolor=blue,
+    % filecolor=magenta,
+    % pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+}
 
 % BULLET POINTS
 \RequirePackage[inline]{enumitem}
@@ -31,12 +37,13 @@
 \RequirePackage[nostruts]{titlesec}
 \titlespacing*{\section}{0em}{0.5em}{0em}
 \titleformat{\section}{\scshape \raggedright \large}{}{0em}{}[\vspace{0em}]
+
 % SUBSECTION FORMATTING
 \titlespacing*{\subsection}{0em}{0em}{0em} % gets rid of space before/after lines
 \titleformat{\subsection}{\bfseries}{}{0em}{}[] % gets rid of section numbering
 
-% BOLD COMMAND
-\newcommand{\skills}[1]{ {\bfseries #1}}
+% % BOLD COMMAND
+% \newcommand{\skills}[1]{ {\bfseries #1}}
 
 % SUBTEXT
 \newcommand{\subtext}[1]{\textit{#1}\par\vspace{0em}}

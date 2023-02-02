@@ -1,4 +1,5 @@
 \documentclass[line, letter,10pt]{article}
+
 \usepackage[utf8]{inputenc}
 \usepackage{CJKutf8}
 \usepackage{tabularx}
@@ -6,11 +7,12 @@
 
 \usepackage{TLCresume}
 
+
 %====================
 % CONTACT INFORMATION
 %====================
+
 \author{Ilya Kazakov}
-% \def\phone{Phone number}
 \def\city{Russia, Petrozavodsk}
 \def\email{mrkazzila@gmail.com}
 
@@ -23,9 +25,15 @@
 \vspace*{1pt}
 
 \hline
-\vspace*{10pt}
-\section{Skills}
 
+\section{About}
+\vspace*{3pt}
+\import{sections/}{about}
+\vspace*{10pt}
+
+%\vspace*{10pt}
+
+\section{Skills}
 \vspace*{3pt}
 \import{sections/}{skills}
 \vspace*{10pt}
