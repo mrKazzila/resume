@@ -66,6 +66,20 @@ li {
   gap: 4em;
 }
 
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    width: 85%;
+}
+
+.contacts {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: 85%;
+}
+
 #bio,
 a {
   font-weight: 300;
@@ -74,6 +88,12 @@ a {
 #user-name {
   font-size: 48px;
   line-height: 1em;
+}
+
+#position {
+  font-size: 18px;
+  line-height: 1em;
+  color: var(--mainTextColor);
 }
 
 #profile-pic {
@@ -193,18 +213,4 @@ a {
     border-left: none;
     padding-left: 0;
   }
-}
-
-.nav-links {
-    display: flex;
-    justify-content: flex-end;
-    list-style: none;
-    width: 85%;
-}
-
-.contacts {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    width: 85%;
 }
