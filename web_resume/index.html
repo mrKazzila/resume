@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="src/styles/style.css">
+
+  <link rel="icon" href="src/images/favicon.ico" title="favicon" type="image/x-icon">
+  <title>Resume Kazakov Ilya</title>
+
+</head>
+
+<body>
+
+  <header>
+    <div class="nav-links">
+        <a href="ru_edition/index.html">
+          <img class="flag" src="src/images/ru_flag.png" width="24" height="24" alt="Switch to russian language">
+        </a>
+    </div>
+  </header>
+
+  <main>
+    <div id="container--main">
+
+      <!-- About & Contacts -->
+      <section id="wrapper--hero" class="section--page">
+        <img id="profile-pic" src="src/images/avatar.jpg">
+
+        <div>
+          <h1 id="user-name">Ilya Kazakov</h1>
+          <p id="bio">Python developer.</p>
+
+          <div class="contacts">
+            <p class="email" id="email">
+              <img class="flag" src="src/images/gmail_icon.png" width="20" height="20" alt="Gmail icon">
+              <a href="mailto:mrkazzila@gmail.com"> Email</a>
+            </p>
+            <p class="email" id="telegram">
+              <img class="flag" src="src//images/telegram_icon.png" width="20" height="20" alt="Telegram icon">
+              <a href="http://t.me/kazzila"> Telegram</a>
+            </p>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Social list & pdf resume -->
+      <section class="section--page">
+        <div id="socials--list">
+          <a href="https://www.linkedin.com/in/i-kazakov/" target="_blank">Linkedin</a>
+          <a href="https://github.com/Kazzila" target="_blank">Github</a>
+          <a href="https://github.com/Kazzila/resume/blob/main/web_resume/src/pdf_docs/Kazakov_Ilya_Python_Developer_en.pdf"
+            target="_blank">Download Resume</a>
+        </div>
+      </section>
+
+      <!-- Tech stack -->
+      <section class="section--page">
+        <h2>Tech stack</h2>
+        <div id="wrapper--techstack__items">
+          <div class="card--techstack">
+            <span>Python</span>
+          </div>
+          <div class="card--techstack">
+            <span>Git, GitHub Actions</span>
+          </div>
+          <div class="card--techstack">
+            <span>Django, Redis, Celery, Crontab</span>
+          </div>
+          <div class="card--techstack">
+            <span>SQL, Postgres</span>
+          </div>
+        </div>
+
+        <!-- soft skills -->
+        <h2>Management & soft skills</h2>
+        <div id="wrapper--softskills__items">
+          <div class="card--softskills">
+            <span>Clear Communication, Team Work</span>
+          </div>
+          <div class="card--softskills">
+            <span>Results oriented, Expectations and Time management</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Work experience -->
+      <section id="work-history-wrapper" class="section--page">
+        <h2>Job Experience</h2>
+
+        <div class="line-break"></div>
+        <div class="card--work-history">
+          <strong>Test Analyst | Playrix</strong>
+          <p>06/2020 - Present</p>
+
+          <p>In addition to manual testing, I was engaged in automating game mechanics in Python.</p>
+
+          <ul>
+            <li>Participation in Code Review for auto-test's.</li>
+            <li>Writing smoke and regress auto-test's for game mechanics.</li>
+            <li>Writing scripts for automate work tasks.</li>
+          </ul>
+
+          <p>
+            <strong>Tech stack:</strong>
+            Charles · Python · Git · Json · TeamCity · Asana API · Google Spreadsheet API
+          </p>
+        </div>
+
+        <div class="line-break"></div>
+
+        <div class="card--work-history">
+          <strong>Python developer | Freelance</strong>
+          <p>08/2019 - 01/2002</p>
+
+          <p>Wed scraper for stock multipliers.</p>
+
+          <ul>
+            <li>Creation of telegram bot for viewing stock multipliers of different countries.</li>
+            <li>Deploying the bot on Heroku.</li>
+            <li>Adding new functionality for the bot.</li>
+          </ul>
+
+          <p>
+            <strong>Tech stack:</strong>
+            Python · matplotlib · Git · Heroku · HTML · Json · CSV
+          </p>
+        </div>
+      </section>
+
+      <!-- My projects -->
+      <section class="section--page">
+        <h2>Personal Projects</h2>
+
+        <div class="card--project">
+          <a href="https://github.com/Kazzila/django_stepik" target="_blank"><span>🛒 </span>
+            A small online store. A project from a Django course
+          </a>
+          <p>Implemented:</p>
+          <ul>
+            <li>Registration of a new user with email confirmation</li>
+            <li>User authorization (including via GitHub)</li>
+            <li>Editing a user profile</li>
+            <li>Adding products to the cart</li>
+            <li>Purchase of goods</li>
+          </ul>
+        </div>
+
+        <div class="card--project">
+          <span>📈 Private project</span>
+          <p>
+            Automation of the trading strategy for BR futures and the Russian stock market based on moving averages,
+            as well as open interest (used only for BR futures).</br>
+            The strategy also collects information about multipliers for Russian market stocks.
+          </p>
+        </div>
+
+      </section>
+
+      <!-- My courses -->
+      <section class="section--page">
+        <h2>Courses</h2>
+
+        <div class="card--project">
+          <a
+            href="https://otus.ru/certificate/76b8da1ae26847fdab5ddfbc06c0ca59/en/"><span>📜 </span>
+            Otus | Python QA Engineer
+          </a>
+        </div>
+
+        <div class="card--project">
+          <a
+            href="https://stepik.org/cert/1234026/"><span>📜 </span>
+            Stepik | Python. Basics and usage
+          </a>
+        </div>
+
+        <div class="card--project">
+          <a
+            href="https://stepik.org/cert/303434"><span>📜 </span>
+            Stepik | Test automation using Selenium and Python
+          </a>
+        </div>
+
+        <div class="card--project">
+          <a href="https://stepik.org/cert/268482"><span>📜 </span>
+            Stepik | Python Programming
+          </a>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+</body>
+
+</html>
