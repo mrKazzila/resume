@@ -1,5 +1,3 @@
-<br>
-
 <h3 align="center">Welcome ☕ </h3>
 <p align="center">
   <a href="web_resume/index.html">View web resume</a> /
