@@ -214,3 +214,7 @@ a {
     padding-left: 0;
   }
 }
+
+.url-title {
+    margin-bottom: -3px;
+}
