@@ -1,12 +1,31 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{TLCresume}[2021/12/11 resume package]
 
+
 % FONT STUFF
 \RequirePackage[T1]{fontenc} %  Font encoding https://texfaq.org/FAQ-why-inp-font
 %\RequirePackage[default,semibold]{sourcesanspro} this is the uggo non CM font
 \RequirePackage[12pt]{moresize}
 \usepackage{anyfontsize}
 \RequirePackage{csquotes}
+% END FONT STUFF
+
+
+% NEW FONT STUFF
+% \RequirePackage[T1]{fontenc}
+% \RequirePackage[default]{opensans} % Or your desired font family
+
+% % Headings
+% \renewcommand{\section}{\scshape\Large}
+% \renewcommand{\subsection}{\bfseries\large}
+
+% % Body text
+% \normalfont\sffamily
+
+% % Accents/Highlights (optional)
+% \newcommand{\highlight}[1]{\textbf{#1}}
+% END FONT STUFF
+
 
 % MARGINS AND SPACING
 \RequirePackage[margin=.9in, top=.9in]{geometry} % Set Margins

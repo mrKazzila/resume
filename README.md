@@ -1,17 +1,15 @@
 <h3 align="center">Welcome ☕ </h3>
+
 <p align="center">
   <a href="https://mrkazzila.github.io/resume/index.html">View web resume</a> •
-  <a href="/docs/src/pdf_docs/resume_Kazakov_Ilya_Python_Developer_en.pdf"
-     download
-     onclick="window.open('https://github.com/mrKazzila/resume/blob/main/docs/src/pdf_docs/resume_Kazakov_Ilya_Python_Developer_en.pdf');
-      window.location.href='/docs/src/pdf_docs/resume_Kazakov_Ilya_Python_Developer_en.pdf';">
-    English pdf resume
+
+  <a href="https://drive.google.com/file/d/1LOVP4_iO9kSKHRBxpNvZ39ldfOqrpAYa/view?usp=drive_link">
+    English PDF resume
   </a> •
-  <a href="/docs/src/pdf_docs/resume_Kazakov_Ilya_Python_Developer_ru.pdf"
-     download
-     onclick="window.open('https://github.com/mrKazzila/resume/blob/main/docs/src/pdf_docs/resume_Kazakov_Ilya_Python_Developer_ru.pdf');
-      window.location.href='/docs/src/pdf_docs/resume_Kazakov_Ilya_Python_Developer_ru.pdf';">
-    Russian pdf resume
+
+  <a href="https://drive.google.com/file/d/1RZdqSZEqbl3bllxHNxauJjDARFmFClOm/view?usp=drive_link">
+    Russian PDF resume
   </a>
+
   <br><br>
 </p>
