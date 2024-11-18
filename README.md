@@ -11,5 +11,4 @@
     Russian PDF resume
   </a>
 
-  <br><br>
 </p>
