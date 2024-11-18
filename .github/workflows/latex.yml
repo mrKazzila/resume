@@ -26,9 +26,6 @@ jobs:
           pdflatex -interaction=nonstopmode -halt-on-error -jobname=Kazakov-Ilya-CV-Python-Developer resume.tex
         working-directory: ./eng_resume
 
-      - name: List files in the directory
-        run: ls -l ./eng_resume
-
       - name: Upload PDF
         uses: actions/upload-artifact@v4
         with:
