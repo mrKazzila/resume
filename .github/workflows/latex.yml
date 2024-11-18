@@ -1,0 +1,33 @@
+name: Build LaTeX document
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-lang-all
+
+      - name: Compile LaTeX to PDF
+        run: |
+          pdflatex -interaction=nonstopmode -halt-on-error resume.tex
+        working-directory: ./eng_resume
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v2
+        with:
+          name: Kazakov-Ilya-CV-Python-Developer.pdf
+          path: ./eng_resume/Kazakov-Ilya-CV-Python-Developer.pdf
