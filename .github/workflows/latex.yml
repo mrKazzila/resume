@@ -26,7 +26,7 @@ jobs:
           pdflatex -interaction=nonstopmode -halt-on-error resume.tex
         working-directory: ./eng_resume
 
-      - name: [DEBUG] List files in the directory
+      - name: List files in the directory
         run: ls -l ./eng_resume
 
       - name: Upload PDF
