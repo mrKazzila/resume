@@ -14,7 +14,7 @@ run:
 
 run_linter:
     @echo "[j] Run the chktex(linter) Docker container ..."
-    -{{DC}} run --rm chktex
+    -{{DC}} run -d --rm chktex
     @echo "[j] Done! Check /output/chktex_output.log for details."
 
 run_format:
