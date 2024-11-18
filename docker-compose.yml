@@ -1,0 +1,12 @@
+# docker-compose.yml
+
+version: '3'
+services:
+  latex:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./eng_resume:/data  # Монтируем папку eng_resume в /data
+      - ./output:/output    # Монтируем папку output для сохранения PDF
+    command: pdflatex -output-directory=/output resume.tex
