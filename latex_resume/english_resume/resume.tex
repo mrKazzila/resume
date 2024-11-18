@@ -1,52 +1,53 @@
-\documentclass[line, letter, 14pt]{article}
+\documentclass[letterpaper,14pt]{article}
 
-\usepackage[utf8]{inputenc}
-\usepackage{CJKutf8}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
 \usepackage{tabularx}
-\usepackage{array}
-\usepackage{indentfirst}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
 \usepackage{TLCresume}
 
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
-%====================
-% CONTACT INFORMATION
-%====================
+\urlstyle{same}
 
-\author{Ilya Kazakov}
-\def\role{Python developer} % job position
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
 
-\def\city{Russia, Petrozavodsk}
-\def\email{kazzilacareer@gmail.com}
-
-\def\github{mrKazzila} % github username
-\def\telegram{mrKazzila} % telegram username
-\def\LinkedIn{i-kazakov} % linkedin.com/in/______
 
 \begin{document}
-\import{sections/}{_header}
-\vspace*{1pt}
+\import{sections/}{_header}\label{sec:header}
 
-\hline
-\vspace*{10pt}
+\vspace*{4pt}
 
 \section{Summary}\label{sec:about}
-\vspace*{3pt}
+\vspace*{4pt}
 \import{sections/}{about}
-\vspace*{10pt}
-
-\section{Work Experience}\label{sec:work-experience}
-\vspace*{3pt}
-\import{sections/}{experience}
-\vspace*{10pt}
+\vspace*{2pt}
 
 \section{Skills}\label{sec:skills}
-\vspace*{3pt}
+\vspace*{4pt}
 \import{sections/}{skills}
-\vspace*{10pt}
+\vspace*{2pt}
 
-\section{Projects}\label{sec:projects}
-\vspace*{3pt}
-\import{sections/}{projects}
-\vspace*{10pt}
+\section{Experience}\label{sec:experience}
+\vspace*{8pt}
+\import{sections/}{experience}
 
 \end{document}
