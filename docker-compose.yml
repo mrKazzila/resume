@@ -9,7 +9,8 @@ services:
     volumes:
       - ./eng_resume:/data
       - ./output:/output
-    command: bash -c "find /data -name '*.tex' -exec latexindent -w -backup 0 {} + && find /data -name '*.tex' -exec pdflatex -output-directory=/output {} +"
+    command: bash -c "find /data -name '*.tex' -exec latexindent -w -no-backup {} + && find /data -name '*.tex' -exec
+      pdflatex -output-directory=/output {} +"
 
   chktex:
     container_name: chktex
