@@ -2,18 +2,20 @@
 
 # ===== Base variables =====
 DC_COMMAND := "docker-compose -p resume -f docker/docker-compose.yml"
+WORK_FOLDERS := "./eng_resume ./ru_resume"
 
 
 # ===== Base =====
 help:
     @echo "Available commands:"
-    @echo "  run          - Run the latex Docker container to build the resume"
-    @echo "  run_linter   - Run the chktex linter Docker container"
-    @echo "  run_format   - Run the latex Docker container for formatting"
-    @echo "  up           - Build the resume builder Docker container"
-    @echo "  down         - Down the resume builder Docker container"
-    @echo "  rebuild      - Rebuild all Docker containers"
-    @echo "  help         - Show this help message"
+    @echo "  just help          - Show this help message"
+    @echo "  just up            - Build the resume builder Docker container"
+    @echo "  just down          - Down the resume builder Docker container"
+    @echo "  just rebuild       - Rebuild all Docker containers"
+    @echo "  just run           - Run the latex Docker container to build the resume"
+    @echo "  just run_linter    - Run the chktex linter Docker container"
+    @echo "  just run_format    - Run the latex Docker container for formatting"
+    @echo "  just remove-bak    - Remove all .bak and .log files from /resume folder"
 
 
 # ===== Docker automation =====
@@ -46,3 +48,12 @@ rebuild:
 	@echo "[m] Rebuild all Docker containers ..."
 	{{DC_COMMAND}} up -d --build --force-recreate
 	@echo "[m] Rebuild complete!"
+
+
+# ===== Clean project =====
+remove-bak:
+    @echo "[j] Remove all '.bak' and '.log' files from specified folders..."
+    for dir in {{WORK_FOLDERS}}; do \
+        find "$dir" -type f \( -name '*.bak*' -o -name '*.log' \) -delete; \
+    done
+    @echo "[j] Done!"
