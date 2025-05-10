@@ -1,18 +1,18 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{TLCresume}[2021/12/11 resume package]
+\ProvidesPackage{TLCresume}[2025/05/10 resume package]
 
-% --- Fonts ---
+% --- Fonts and Encoding ---
 \RequirePackage[T1]{fontenc}
 \RequirePackage[12pt]{moresize}
 
 % --- Layout ---
-\RequirePackage[margin=.9in, top=.2in]{geometry}
+\RequirePackage[margin=0.9in, top=0.2in]{geometry}
 \raggedright
 \raggedbottom
 
 % --- Colors ---
 \RequirePackage{xcolor}
-\definecolor{highlight}{RGB}{105, 74, 138}
+\providecolor{highlight}{RGB}{105, 74, 138}
 
 % --- Lists ---
 \RequirePackage[inline]{enumitem}
@@ -21,60 +21,36 @@
 % --- Sections ---
 \RequirePackage[nostruts]{titlesec}
 \titlespacing*{\section}{0em}{0.5em}{0.3em}
-\titleformat{\section}{%
-    \vspace{0pt}\scshape\raggedright\large\bfseries%
-}{}{0em}{}[\vspace{0.1em}\color{black}\titlerule \vspace{0pt}]
+\titleformat{\section}{\scshape\large\bfseries\raggedright}{}{0em}{}[\vspace{0.1em}\color{black}\titlerule]
 
 \titlespacing*{\subsection}{0em}{0em}{0em}
-\titleformat{\subsection}{\bfseries}{}{0em}{}[]
+\titleformat{\subsection}{\bfseries}{}{0em}{}
 
 % --- Misc ---
 \RequirePackage{standalone}
 \RequirePackage{import}
 \pagenumbering{gobble}
 
-%-------------------------
-% Custom commands
-\newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
-}
-
-\newcommand{\classesList}[4]{
-    \item\small{
-        {#1 #2 #3 #4 \vspace{-2pt}}
-  }
-}
+% --- Custom Commands ---
+\newcommand{\resumeItem}[1]{\item\small{#1}}
 
 \newcommand{\resumeSubheading}[4]{
   \vspace{-2pt}\item
-    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & \textbf{\small #2} \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & \textbf{\small #2} \\
+    \textit{\small #3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & \textbf{\small #2}\\
-    \end{tabular*}\vspace{-7pt}
+  \item
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \small #1 & \textbf{\small #2} \\
+  \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
-
-\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=0pt, topsep=2pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
