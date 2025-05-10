@@ -1,77 +1,37 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{TLCresume}[2021/12/11 resume package]
 
-
-\NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{TLCresume}[2021/12/11 resume package]
-
-
-% FONT STUFF
-\RequirePackage[T1]{fontenc} %  Font encoding https://texfaq.org/FAQ-why-inp-font
-%\RequirePackage[default,semibold]{sourcesanspro} this is the uggo non CM font
+% --- Fonts ---
+\RequirePackage[T1]{fontenc}
 \RequirePackage[12pt]{moresize}
-\usepackage{anyfontsize}
-\RequirePackage{csquotes}
-% END FONT STUFF
 
-% MARGINS AND SPACING
-\RequirePackage[margin=.9in, top=.2in]{geometry} % Set Margins
-\raggedright % left align no indent
-\raggedbottom % top align no indent
+% --- Layout ---
+\RequirePackage[margin=.9in, top=.2in]{geometry}
+\raggedright
+\raggedbottom
 
-% COLOR
+% --- Colors ---
 \RequirePackage{xcolor}
-\definecolor{highlight}{RGB}{105, 74, 138} % CHANGE THIS TO YOUR FAV COLOR https://g.co/kgs/aoqdi7
+\definecolor{highlight}{RGB}{105, 74, 138}
 
-% LINKS
-\RequirePackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    urlcolor=highlight,
-    linkcolor=blue,
-    % filecolor=magenta,
-    % pdftitle={Overleaf Example},
-    pdfpagemode=FullScreen,
-}
-
-% BULLET POINTS
+% --- Lists ---
 \RequirePackage[inline]{enumitem}
 \setlength{\tabcolsep}{0in}
 
-% SECTION FORMATTING
-% this is where the uggo horizontal rules were
+% --- Sections ---
 \RequirePackage[nostruts]{titlesec}
-\titlespacing*{\section}{0em}{0.5em}{0em}
+\titlespacing*{\section}{0em}{0.5em}{0.3em}
+\titleformat{\section}{%
+    \vspace{0pt}\scshape\raggedright\large\bfseries%
+}{}{0em}{}[\vspace{0.1em}\color{black}\titlerule \vspace{0pt}]
 
-\titleformat{\section}{
-\vspace{0pt}\scshape\raggedright\large\bfseries
-}{}{0em}{}[\color{black}\titlerule \vspace{0pt}]
+\titlespacing*{\subsection}{0em}{0em}{0em}
+\titleformat{\subsection}{\bfseries}{}{0em}{}[]
 
-% SUBSECTION FORMATTING
-\titlespacing*{\subsection}{0em}{0em}{0em} % gets rid of space before/after lines
-\titleformat{\subsection}{\bfseries}{}{0em}{}[] % gets rid of section numbering
-
-% SUBTEXT
-\newcommand{\subtext}[1]{\textit{#1}\par\vspace{0em}}
-
-% tighter spacing than itemize
-% \setlist[itemize]{align=parleft,left=0pt..1em}
-% \newenvironment{zitemize}{
-% \begin{itemize} \itemsep 0pt \parskip 0pt \parsep 1pt}
-% {\end{itemize}\vspace{-.5em}}
-
-% NO PAGE NUMBER
-\pagenumbering{gobble}
-
-% SUBFILES IMPORTING
+% --- Misc ---
 \RequirePackage{standalone}
 \RequirePackage{import}
-
-% FOR TEMPLATE FILLER
-\RequirePackage{blindtext}% Filler Text
-
-\pdfgentounicode=1
-
+\pagenumbering{gobble}
 
 %-------------------------
 % Custom commands
