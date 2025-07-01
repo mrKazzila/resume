@@ -1,11 +1,16 @@
+% PDF METADATA AND CHARACTER SUPPORT
+\pdfgentounicode=1
+\pdfcompresslevel=9
+\pdfobjcompresslevel=3
+\pdfminorversion=5
+
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{TLCresume}[2021/12/11 resume package]
 
 % FONT SETTINGS
-\RequirePackage[T1]{fontenc} % Font encoding
-\RequirePackage{csquotes}
-\RequirePackage{anyfontsize}
-\RequirePackage[12pt]{moresize}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\renewcommand{\familydefault}{\sfdefault}
 
 % MARGINS AND SPACING
 \RequirePackage[margin=.9in, top=.2in]{geometry} % Set Margins
@@ -21,13 +26,18 @@
 \renewcommand{\headrulewidth}{0pt} % No header rule
 \renewcommand{\footrulewidth}{0pt} % No footer rule
 
-% HYPERLINK SETTINGS
-\RequirePackage[hidelinks]{hyperref}
+% HYPERLINK SETTINGS (OPTIMIZED)
+\RequirePackage[pdfencoding=auto]{hyperref}
 \hypersetup{
     colorlinks=true,
     urlcolor=highlight,
     linkcolor=blue,
-    pdfpagemode=FullScreen,
+    pdftitle={Resume},
+    pdfauthor={Ilya Kazakov},
+    pdfsubject={Resume},
+    pdfkeywords={python, mrkazzila, resume, CV},
+    bookmarksopen=false,
+    bookmarksdepth=1
 }
 
 % BULLET POINTS
@@ -92,15 +102,12 @@
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
-% BULLET POINTS CUSTOMIZATION
-\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+% BULLET POINTS CUSTOMIZATION (SIMPLIFIED)
+\renewcommand\labelitemi{\tiny\textbullet}
+\renewcommand\labelitemii{\tiny\textbullet}
 
 % ITEMIZE ENVIRONMENT FOR RESUME SECTIONS
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
-
-% PDF METADATA AND CHARACTER SUPPORT
-\pdfgentounicode=1
