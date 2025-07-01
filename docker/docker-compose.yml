@@ -9,8 +9,18 @@ services:
     volumes:
       - ../eng_resume:/data
       - ../output:/output
-    command: bash -c "find /data -name '*.tex' -exec latexindent -w -no-backup {} + && find /data -name '*.tex' -exec
-      pdflatex -output-directory=/output {} +"
+    command: >
+      bash -c "
+      find /data -name '*.tex' -exec pdflatex -draftmode -interaction=nonstopmode --output-directory=/output {} + &&
+      find /data -name '*.tex' -exec pdflatex -interaction=nonstopmode --output-directory=/output {} + &&
+      if [ -f /output/resume.pdf ]; then
+        gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress -dNOPAUSE -dQUIET -dBATCH -dColorImageResolution=72 -dGrayImageResolution=72 -dMonoImageResolution=100 -dDetectDuplicateImages=true -dCompressFonts=true -dSubsetFonts=true -sOutputFile=/output/resume_compressed.pdf /output/resume.pdf &&
+        echo 'PDF compression successful!'
+      else
+        echo 'Error: /output/resume.pdf not found!' >&2
+        exit 1
+      fi
+      "
 
   chktex:
     container_name: chktex
@@ -20,7 +30,24 @@ services:
     volumes:
       - ../eng_resume:/data
       - ../output:/output
-    command: bash -c "
-      chktex -v /data/resume.tex > /output/chktex_output.log 2>&1 && \
+    command: >-
+      bash -c "chktex -v /data/resume.tex > /output/chktex_output.log 2>&1 &&
       echo 'chktex completed. Check /output/chktex_output.log for details.'"
 
+  pdfanalysis:
+    container_name: pdfanalysis
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../output:/output
+    command: >-
+      bash -c "if [ -f /output/resume_compressed.pdf ]; then
+        echo -e '\n=== PDF Fonts ===' &&
+        pdffonts /output/resume_compressed.pdf &&
+        echo -e '\n=== PDF Info ===' &&
+        pdfinfo /output/resume_compressed.pdf
+      else
+        echo 'Error: /output/resume_compressed.pdf not found!' >&2
+        exit 1
+      fi"
